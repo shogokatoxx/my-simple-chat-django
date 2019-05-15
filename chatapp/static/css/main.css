@@ -1,0 +1,212 @@
+header{
+  background-color:#cca576;
+  text-align:center;
+}
+header h1{
+  font-size: 24px;
+  color: #603a00;
+  margin:0 10px 0 0;
+}
+#top,#seach{
+  width:375px;
+}
+#top h1,#seach h1{
+  float:left;
+  padding-left:10px;
+  padding-top:10px;
+}
+#top h1 a,#seach h1 a{
+  color:#ffffff;
+}
+#top header , #seach header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:375px;
+  height:50px;
+}
+#top #wrap , #seach #wrap{
+  padding-top:50px;
+  width:375px;
+  overflow:auto;
+}
+#top .global-nav , #seach .global-nav {
+  list-style:none;
+  padding:10px;
+  float:right;
+}
+#top .global-nav li , #seach .global-nav li{
+  float:left;
+  padding-right:10px;
+}
+#top .global-nav li a , #seach .global-nav li a{
+  color:#ffffff;
+}
+#chat{
+  width:375px;
+}
+#chat .back{
+  float:left;
+  padding-top:10px;
+  padding-left:10px;
+}
+#loginout{
+  width:375px;
+}
+
+#wrap{
+  background-color:#eeeeee;
+}
+.content{
+  background-color:#eeeeee;
+}
+#lists{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  margin:0;
+}
+#lists li{
+  padding-left:10px;
+  border-top:1px solid #bbbbbb;
+  font-size:24px;
+}
+#lists li:last-child{
+  border-bottom:1px solid #bbbbbb;
+}
+#lists a li{
+  color:#666666;
+}
+#lists a:hover{
+  cursor:pointer;
+}
+#user{
+  background: #cdcdcd;
+  width: 150px;
+  margin-right: auto;
+  border-radius: 20%;
+  text-align: center;
+}
+#touser{
+  background: #00ff00;
+  width: 150px;
+  margin-left: auto;
+  border-radius: 20%;
+  text-align: center;
+}
+#chat form{
+  border-top:1px solid #bbbbbb;
+  padding-top:10px;
+  padding-bottom:5px;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:375px;
+  background-color:#dddddd;
+}
+#chat .date{
+  font-size: 5px;
+}
+#chat header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:375px;
+  height:50px;
+}
+#chat #wrap{
+  padding-top:50px;
+  padding-bottom:50px;
+  width:375px;
+  overflow:auto;
+}
+#chat h1{
+  padding-top:5px;
+}
+#chat input,#loginout input{
+  height:25px;
+}
+#chat button,#loginout button{
+  width:80px;
+  height:25px;
+  border-radius:5%;
+  font-size:12px;
+  font-weight:bold;
+  background-color:#00ff00;
+  color:#ffffff;
+}
+footer{
+  width:375px;
+  background:#dcdcdc;
+  text-align:center;
+}
+#loginout footer{
+  width:375px;
+  background:#dcdcdc;
+  text-align:center;
+}
+footer small{
+  color:#ffffff;
+  font-size:10px;
+}
+
+#loginout header{
+  height:50px;
+}
+#loginout .container{
+  padding:0;
+}
+#loginout h1{
+  float:left;
+  padding-left:10px;
+  padding-top:10px;
+}
+#loginout h1 a{
+  color:#ffffff;
+}
+/* #loginout ul{
+  list-style:none;
+  padding:10px;
+} */
+/* #loginout ul li a{
+  color:#ffffff;
+} */
+/* #loginout nav{
+  float:right;
+  width:160px;
+} */
+#loginout ul{
+
+}
+/* #loginout ul li{
+  width: 70px;
+  display: inline;
+  padding-left:10px;
+} */
+#seach form{
+  padding-bottom:30px;
+  padding-left:10px;
+}
+.hidden{
+  display:none;
+}
+#top .nav , #loginout .nav , #seach .nav{
+  float:right;
+  padding-top: 10px;
+  padding-right: 10px;
+  cursor:pointer;
+}
+#menu ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  text-align:center;
+  font-family:serif;
+}
+#menu ul li{
+  padding:5px;
+  border-bottom:1px solid #666666;
+}
+#menu ul li a{
+  color:#666666;
+}

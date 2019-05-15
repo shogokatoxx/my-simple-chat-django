@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>友達検索</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+  <body id="seach">
+    <header>
+      <div class="logo">
+        <h1><a href="{% url 'top' %}">simple chat</a></h1>
+      </div>
+      <nav>
+        <ul id="nav" class="nav" onclick="tap()">
+          <a><img src="{% static 'image/menu.png' %}" style="height:30px;width:30px;"></a>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrap">
+      <div id="menu" class="hidden">
+        <ul>
+          <li><a href="{% url 'login' %}">ログイン</a></li>
+          <li><a href="{% url 'logout' %}">ログアウト</a></li>
+          <li><a href="{% url 'accounts:signup' %}">新規登録</a></li>
+          <li><a href="{% url 'seach' %}">友達追加</a></li>
+        </ul>
+      </div>
+      <div class="contents">
+        <form method="post">
+          <p>ユーザー名を入れてください</p>
+          {% csrf_token %}
+          {{ form }}
+          <button type="submit">登録</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <small>(c)shogokatoxx</small>
+    </footer>
+    <script>
+      let menu = document.querySelector('#menu');
+      let nav = document.querySelector('#nav');
+
+      function tap(){
+        if(menu.classList == "hidden"){
+          menu.classList.remove('hidden');
+        }else{
+          menu.classList.add('hidden');
+        }
+      }
+    </script>
+  </body>
+</html>

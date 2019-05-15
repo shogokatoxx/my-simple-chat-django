@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>チャットルーム</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body id="chat">
+    <header>
+      <div class="back">
+        <a href="{% url 'top' %}">戻る</a>
+      </div>
+      <h1>{{ user }}</h1>
+    </header>
+    <div id="wrap">
+      <div class="contents">
+        {% for list in lists %}
+        {% if list.touser == request.user.username and list.author ==  author %}
+          <div id="user" class="chat">
+            <p>{{ list.text }}</p>
+            <p class="date">{{ list.date }}</p>
+          </div>
+        {% endif %}
+        {% if list.touser == user and list.author == request.user %}
+          <div id="touser" class="chat">
+            <p>{{ list.text }}</p>
+            <p class="date">{{ list.date }}</p>
+          </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">送信</button>
+      </form>
+    </div>
+    <footer>
+      <small>(c)shogokatoxx</small>
+    </footer>
+    <script>
+      setTimeout(function(){
+        location.reload();
+      },15000);
+    </script>
+  </body>
+</html>
