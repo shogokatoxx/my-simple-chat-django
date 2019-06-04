@@ -18,14 +18,25 @@ def top(request):
                 if flist not in check:
                     check.append(flist)
         for f in check:
+<<<<<<< HEAD
              b = User.objects.get(username=f)
              posts.append(b)
+=======
+            try:
+                b = User.objects.get(username=f)
+                posts.append(b)
+            except:
+                pass
+>>>>>>> 0bdc8184836a60da7f293558675947533a5139b7
         return render(request,'chatapp/top.html',{'posts':posts})
     except TypeError:
         return render(request,'chatapp/top.html',{})
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0bdc8184836a60da7f293558675947533a5139b7
 @login_required
 def chat(request,pk):
     #選んだユーザーの名前取得

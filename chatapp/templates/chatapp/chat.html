@@ -38,14 +38,25 @@
         {{ form }}
         <button type="submit">送信</button>
       </form>
+      <!-- <input type="hidden" id="in" value=""> -->
     </div>
     <footer>
       <small>(c)shogokatoxx</small>
     </footer>
     <script>
-      setTimeout(function(){
-        location.reload();
-      },15000);
+    // document.querySelector('input').value = localStorage.getItem('key');
+    setTimeout(function(){
+       // const input = document.querySelector('input').value;
+       // localStorage.setItem('key',input);
+       location.reload();
+     },30000);
+      // $(function(){
+      //   $("button").click(function(){
+      //     $("#result").load("more",function(){
+      //       $("#message").css("color","red");
+      //     });
+      //   });
+      // });
     </script>
   </body>
 </html>
