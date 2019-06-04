@@ -1,7 +1,7 @@
-* SimpleChat
+*SimpleChat
 Djangoで作ったチャット風アプリです。
 
-** 環境
+**環境
 - Python3.6
 - Django2
 - Djangoに付いてくるパッケージ
