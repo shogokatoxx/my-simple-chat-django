@@ -8,6 +8,22 @@
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    #sub{
+      display:inline-block;
+      padding:0.1em 0.5em;
+      text-decoration:none;
+      background:#668ad8;
+      color:#fff;
+      border-bottom:solid 4px #627295;
+      border-radius:3px;
+    }
+    #sub:active{
+      -webkit-transform:translateY(4px);
+        transform:translateY(4px);
+        border-bottom:none;
+    }
+  </style>
 </head>
   <body id="seach">
     <header>
@@ -34,7 +50,7 @@
           <p>ユーザー名を入れてください</p>
           {% csrf_token %}
           {{ form }}
-          <button type="submit">登録</button>
+          <button type="submit" id="sub">登録</button>
         </form>
       </div>
     </div>

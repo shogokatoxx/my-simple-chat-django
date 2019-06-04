@@ -2,30 +2,32 @@ from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib.auth.models import User
 from .models import Post,Follow
 from .forms import PostForm,FollowForm
+from django.contrib.auth.decorators import login_required
 
 def top(request):
-    fobjs = Follow.objects.filter(author=request.user)
-    flists = []
-    posts = []
-    check = []
-    for fobj in fobjs:
-        a = fobj.follow
-        flists.append(a)
-        #二重フォロー対策
-        for flist in flists:
-            if flist not in check:
-                check.append(flist)
-    for f in check:
-        b = User.objects.get(username=f)
-        posts.append(b)
-    # users = User.objects.all()
-    # for p in users:
-    #     if p == request.user:
-    #         pass
-    #     else:
-    #         posts.append(p)
-    return render(request,'chatapp/top.html',{'posts':posts})
+    try:
+        fobjs = Follow.objects.filter(author=request.user)
+        flists = []
+        posts = []
+        check = []
+        for fobj in fobjs:
+            a = fobj.follow
+            flists.append(a)
+            #二重フォロー対策
+            for flist in flists:
+                if flist not in check:
+                    check.append(flist)
+        for f in check:
+            try:
+                b = User.objects.get(username=f)
+                posts.append(b)
+            except:
+                pass
+        return render(request,'chatapp/top.html',{'posts':posts})
+    except TypeError:
+        return render(request,'chatapp/top.html',{})
 
+@login_required
 def chat(request,pk):
     #選んだユーザーの名前取得
     user = User.objects.values_list('username',flat=True).get(pk=pk)
@@ -50,7 +52,7 @@ def chat(request,pk):
     #lists(全メッセージ)>>テンプレートでそれぞれ指定して分解
     return render(request,'chatapp/chat.html',{'lists':lists,'form':form,'user':user,'author':author})
 
-
+@login_required
 def seach(request):
     if request.method == 'POST':
         form = FollowForm(request.POST)

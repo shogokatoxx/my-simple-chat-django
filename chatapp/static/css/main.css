@@ -29,6 +29,7 @@ header h1{
   padding-top:50px;
   width:375px;
   overflow:auto;
+  height:800px;
 }
 #top .global-nav , #seach .global-nav {
   list-style:none;
@@ -127,13 +128,18 @@ header h1{
   height:25px;
 }
 #chat button,#loginout button{
-  width:80px;
-  height:25px;
-  border-radius:5%;
-  font-size:12px;
-  font-weight:bold;
-  background-color:#00ff00;
-  color:#ffffff;
+  display:inline-block;
+  padding:0.1em 0.5em;
+  text-decoration:none;
+  background:#00ff00;
+  color:#fff;
+  border-bottom:solid 4px #627295;
+  border-radius:3px;
+}
+#chat button,#loginout button:active{
+  -webkit-transform:translateY(4px);
+  transform:translateY(4px);
+  border-bottom:none;
 }
 footer{
   width:375px;
@@ -209,4 +215,7 @@ footer small{
 }
 #menu ul li a{
   color:#666666;
+}
+#chat .contents{
+  height:800px;
 }
